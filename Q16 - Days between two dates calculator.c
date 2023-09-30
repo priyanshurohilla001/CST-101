@@ -68,8 +68,6 @@ int main(){
     int leapyear = 0;
     if(month_start<=2 && month_end>2 && year%4==0){
         leapyear = 1;
-    }else{
-        leapyear = 0;
     }
 
 
