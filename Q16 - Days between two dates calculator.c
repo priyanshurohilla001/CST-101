@@ -1,7 +1,4 @@
 /*
-
-Solved by Priyanshu ❤️
-
 Explanation : 
 
 - first we will calulate total no of days between given months ( complete like 1st of jan to 31st of Aug )
@@ -64,26 +61,17 @@ int main(){
     int monthdays = totaldaysinmonths(month_start,month_end);
 
 
-    int extradays = 0;
-
-    while(date_start>1){
-        extradays++;
-        date_start--;
-    }
-
-    while(date_end<daysinmonth(month_end)){
-        extradays++;
-        date_end++;
-    }
+    int extradays = (date_start - 1)+(daysinmonth(month_end)-date_end);
 
 
 
-    int leapyear;
-    if(year%4==0){
+    int leapyear = 0;
+    if(month_start<=2 && year%4==0){
         leapyear = 1;
     }else{
         leapyear = 0;
     }
+
 
     printf("Total days between 2 dates are : %d",monthdays + leapyear - extradays);
     return 0;
