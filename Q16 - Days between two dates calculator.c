@@ -15,13 +15,22 @@ Explanation :
 #include <math.h>
 
 int daysinmonth(int a){
-    if(a==2){
-        return 28;
-    }else if(a%2==0){
-        return 30;
-    }else{
-        return 31;
+    if(a<8){
+        if(a==2){
+         return 28;
+        }else if(a%2==0){
+         return 30;
+        }else{
+         return 31;
+        }
+    } else {
+        if(a%2==0){
+            return 31;
+        } else{
+            return 30;
+        }
     }
+   
 }
 
 int totaldaysinmonths(int a , int b){  // a is month start and b is month end
